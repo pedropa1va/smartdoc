@@ -1,0 +1,25 @@
+{
+  "title": "Welcome to SmartDoc",
+  "description": "SmartDoc simplifies medical reports and saves you time.",
+  "benefits": {
+    "benefit1": "Streamlined report generation",
+    "benefit2": "Easy access to medical records",
+    "benefit3": "Time-saving features for healthcare professionals"
+  },
+  "callToAction": {
+    "text": "Subscribe now for early access!",
+    "button": "Subscribe"
+  },
+  "downloadLinks": {
+    "android": "Download on Android",
+    "iphone": "Download on iPhone"
+  },
+  "language": {
+    "english": "English",
+    "spanish": "Español"
+  },
+  "footer": {
+    "contact": "Contact us for more information.",
+    "privacyPolicy": "Privacy Policy"
+  }
+}

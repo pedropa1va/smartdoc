@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" data-lang-switcher>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartDoc - Simplifying Medical Reports</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #00a5bf;
+        --secondary-color: #414757;
+        --text-color: #000000;
+        --error-color: #f13a59;
+      }
+      .navbar-custom {
+        background-color: var(--primary-color);
+      }
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+      .hero-section {
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0.9)
+          ),
+          url("assets/images/medical-bg.jpg");
+        background-size: cover;
+        padding: 100px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">SmartDoc</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#benefits" data-lang="menu-benefits"
+                >Benefits</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://webapp.smartdoc.com/register"
+                data-lang="menu-webapp"
+                >Web App</a
+              >
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-light btn-sm" onclick="toggleLanguage()">
+                EN/ES
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container text-center">
+        <h1 class="display-4" data-lang="hero-title">
+          Simplify Your Medical Reports
+        </h1>
+        <p class="lead" data-lang="hero-subtitle">
+          Save time and increase accuracy with AI-powered medical documentation
+        </p>
+        <a
+          href="https://webapp.smartdoc.com/register"
+          class="btn btn-primary btn-lg"
+          data-lang="cta-button"
+          >Get Started</a
+        >
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5" data-lang="benefits-title">
+          Why Choose SmartDoc?
+        </h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title" data-lang="benefit1-title">
+                  Time Savings
+                </h5>
+                <p class="card-text" data-lang="benefit1-text">
+                  Reduce documentation time by up to 60%
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title" data-lang="benefit2-title">
+                  Improved Accuracy
+                </h5>
+                <p class="card-text" data-lang="benefit2-text">
+                  AI-powered assistance for precise medical reporting
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title" data-lang="benefit3-title">
+                  Easy Integration
+                </h5>
+                <p class="card-text" data-lang="benefit3-text">
+                  Seamlessly works with your existing workflow
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="bg-light py-5">
+      <div class="container text-center">
+        <h2 class="mb-4" data-lang="download-title">Download SmartDoc</h2>
+        <div class="row justify-content-center">
+          <div class="col-6 col-md-3">
+            <a
+              href="https://apps.apple.com/app/smartdoc"
+              class="btn btn-dark btn-lg w-100 mb-3"
+            >
+              <i class="fab fa-apple"></i> App Store
+            </a>
+          </div>
+          <div class="col-6 col-md-3">
+            <a
+              href="https://play.google.com/store/apps/smartdoc"
+              class="btn btn-dark btn-lg w-100 mb-3"
+            >
+              <i class="fab fa-google-play"></i> Play Store
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4">
+      <div class="container text-center">
+        <p>&copy; 2025 SmartDoc. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+    <script>
+      // Add this code inside the existing <script> tag, before the translations object
+      function getBrowserLanguage() {
+        const language = navigator.language || navigator.userLanguage;
+        return language.startsWith("es") ? "es" : "en";
+      }
+
+      // Language toggle functionality
+      const translations = {
+        en: {
+          "menu-benefits": "Benefits",
+          "menu-webapp": "Web App",
+          "hero-title": "Simplify Your Medical Reports",
+          "hero-subtitle":
+            "Save time and increase accuracy with AI-powered medical documentation",
+          "cta-button": "Get Started",
+          "benefits-title": "Why Choose SmartDoc?",
+          "benefit1-title": "Time Savings",
+          "benefit1-text": "Reduce documentation time by up to 60%",
+          "benefit2-title": "Improved Accuracy",
+          "benefit2-text":
+            "AI-powered assistance for precise medical reporting",
+          "benefit3-title": "Easy Integration",
+          "benefit3-text": "Seamlessly works with your existing workflow",
+          "download-title": "Download SmartDoc",
+        },
+        es: {
+          "menu-benefits": "Beneficios",
+          "menu-webapp": "Aplicación Web",
+          "hero-title": "Simplifica tus Informes Médicos",
+          "hero-subtitle":
+            "Ahorra tiempo y mejora la precisión con documentación médica potenciada por IA",
+          "cta-button": "Comenzar",
+          "benefits-title": "¿Por qué elegir SmartDoc?",
+          "benefit1-title": "Ahorro de Tiempo",
+          "benefit1-text": "Reduce el tiempo de documentación hasta un 60%",
+          "benefit2-title": "Mayor Precisión",
+          "benefit2-text": "Asistencia con IA para informes médicos precisos",
+          "benefit3-title": "Fácil Integración",
+          "benefit3-text": "Se integra perfectamente con tu flujo de trabajo",
+          "download-title": "Descarga SmartDoc",
+        },
+      };
+
+      let currentLang = getBrowserLanguage();
+
+      function toggleLanguage() {
+        currentLang = currentLang === "en" ? "es" : "en";
+        updateContent();
+      }
+
+      // Replace the existing updateContent function
+      function updateContent() {
+        document.documentElement.lang = currentLang;
+        document.querySelectorAll("[data-lang]").forEach((element) => {
+          const key = element.getAttribute("data-lang");
+          if (translations[currentLang][key]) {
+            if (element.tagName === "INPUT") {
+              element.value = translations[currentLang][key];
+            } else {
+              element.textContent = translations[currentLang][key];
+            }
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        updateContent();
+        document.documentElement.lang = currentLang;
+      });
+    </script>
+  </body>
+</html>

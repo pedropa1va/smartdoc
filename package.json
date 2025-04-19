@@ -1,0 +1,18 @@
+{
+    "name": "smartdoc",
+    "version": "1.0.0",
+    "description": "A responsive landing page for the SmartDoc app that highlights its benefits in simplifying medical reports and saving time.",
+    "main": "index.html",
+    "scripts": {
+      "start": "live-server src",
+      "build": "echo 'Build step not defined'"
+    },
+    "dependencies": {
+      "bootstrap": "^5.1.3"
+    },
+    "devDependencies": {
+      "live-server": "^1.2.1"
+    },
+    "author": "Your Name",
+    "license": "MIT"
+  }

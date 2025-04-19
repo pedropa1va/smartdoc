@@ -1,0 +1,13 @@
+smartdoc-landing
+├── src
+│   ├── css
+│   │   └── styles.css
+│   ├── js
+│   │   ├── main.js
+│   │   └── i18n.js
+│   ├── locales
+│   │   ├── en.json
+│   │   └── es.json
+│   └── index.html
+├── package.json
+└── README.md
