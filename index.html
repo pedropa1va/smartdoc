@@ -3,7 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SmartDoc - Simplifying Medical Reports</title>
+    <title>SmartDoc - AI-Powered Medical Documentation</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SmartDoc uses AI to convert patient conversations into complete medical documentation. Save 60% of documentation time with voice-activated medical reporting.">
+    <meta name="keywords" content="medical documentation, AI medical assistant, medical transcription, medical reports, doctor productivity, clinical documentation">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="SmartDoc - AI-Powered Medical Documentation">
+    <meta property="og:description" content="Convert patient conversations into complete documentation in seconds. Voice-activated, AI-powered medical assistant.">
+    <meta property="og:image" content="https://yourdomain.com/assets/images/smartdoc-og-image.jpg">
+    <meta property="og:url" content="https://yourdomain.com">
+    
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,6 +25,8 @@
         --secondary-color: #414757;
         --text-color: #000000;
         --error-color: #f13a59;
+        --light-color: #f8f9fa;
+        --highlight-color: #e6f7fa;
       }
       .navbar-custom {
         background-color: var(--primary-color);
@@ -22,6 +35,10 @@
         background-color: var(--primary-color);
         border-color: var(--primary-color);
       }
+      .btn-primary:hover {
+        background-color: #008a9e;
+        border-color: #008a9e;
+      }
       .hero-section {
         background: linear-gradient(
             rgba(255, 255, 255, 0.9),
@@ -29,7 +46,7 @@
           ),
           url("assets/images/medical-bg.jpg");
         background-size: cover;
-        padding: 100px 0;
+        padding: 130px 0 100px;
       }
 
       body {
@@ -41,13 +58,67 @@
       footer {
         margin-top: auto;
       }
+      
+      .card {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      }
+
+      .benefit-icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .testimonial {
+        background-color: var(--highlight-color);
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 1rem 0;
+      }
+
+      .feature-section {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .navbar {
+        padding: 15px 0;
+        transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled {
+        padding: 8px 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+
+      .nav-link {
+        font-weight: 500;
+      }
+
+      .section-divider {
+        height: 5px;
+        width: 70px;
+        background-color: var(--primary-color);
+        margin: 0 auto 50px;
+        border-radius: 5px;
+      }
     </style>
   </head>
   <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">SmartDoc</a>
+        <a class="navbar-brand" href="#">
+          <strong>SmartDoc</strong>
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -59,20 +130,23 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#benefits" data-lang="menu-benefits"
-                >Benefits</a
-              >
+              <a class="nav-link" href="#benefits" data-lang="menu-benefits">Benefits</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#how-it-works" data-lang="menu-how-it-works">How It Works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials" data-lang="menu-testimonials">Testimonials</a>
             </li>
             <li class="nav-item">
               <a
                 class="nav-link"
                 href="https://webapp.smartdoc.com/register"
                 data-lang="menu-webapp"
-                >Web App</a
-              >
+              >Web App</a>
             </li>
             <li class="nav-item">
-              <button class="btn btn-light btn-sm" onclick="toggleLanguage()">
+              <button class="btn btn-light btn-sm" id="lang-toggle">
                 EN/ES
               </button>
             </li>
@@ -84,61 +158,274 @@
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="container text-center">
-        <h1 class="display-4" data-lang="hero-title">
-          Simplify Your Medical Reports
+        <h1 class="display-4 fw-bold" data-lang="hero-title">
+          From Patient Conversation to Complete Documentation in Seconds
         </h1>
-        <p class="lead" data-lang="hero-subtitle">
+        <p class="lead mb-4" data-lang="hero-subtitle">
           Save time and increase accuracy with AI-powered medical documentation
         </p>
-        <a
-          href="https://webapp.smartdoc.com/register"
-          class="btn btn-primary btn-lg"
-          data-lang="cta-button"
-          >Get Started</a
-        >
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <a
+              href="https://webapp.smartdoc.com/register"
+              class="btn btn-primary btn-lg w-75 mb-3 shadow"
+              data-lang="cta-button"
+            >Start Free Trial</a>
+            <p class="text-muted small" data-lang="no-credit-card">No credit card required. 14-day free trial.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Benefits Section -->
     <section id="benefits" class="py-5">
       <div class="container">
-        <h2 class="text-center mb-5" data-lang="benefits-title">
+        <h2 class="text-center mb-3" data-lang="benefits-title">
           Why Choose SmartDoc?
         </h2>
+        <div class="section-divider"></div>
         <div class="row">
           <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="card h-100 text-center p-3">
               <div class="card-body">
+                <i class="fas fa-clock benefit-icon"></i>
                 <h5 class="card-title" data-lang="benefit1-title">
-                  Time Savings
+                  Save 60% Documentation Time
                 </h5>
                 <p class="card-text" data-lang="benefit1-text">
-                  Reduce documentation time by up to 60%
+                  Complete medical reports in a fraction of the time. SmartDoc handles the paperwork so you can focus on patient care.
                 </p>
               </div>
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="card h-100 text-center p-3">
               <div class="card-body">
+                <i class="fas fa-microphone benefit-icon"></i>
                 <h5 class="card-title" data-lang="benefit2-title">
-                  Improved Accuracy
+                  Voice-Activated Assistant
                 </h5>
                 <p class="card-text" data-lang="benefit2-text">
-                  AI-powered assistance for precise medical reporting
+                  Simply speak naturally about the patient's condition. Our AI understands medical terminology and contextual conversation.
                 </p>
               </div>
             </div>
           </div>
           <div class="col-md-4 mb-4">
-            <div class="card h-100">
+            <div class="card h-100 text-center p-3">
               <div class="card-body">
+                <i class="fas fa-file-word benefit-icon"></i>
                 <h5 class="card-title" data-lang="benefit3-title">
-                  Easy Integration
+                  Ready-to-Use Reports
                 </h5>
                 <p class="card-text" data-lang="benefit3-text">
-                  Seamlessly works with your existing workflow
+                  Get complete Word documents with proper formatting, correct medical terminology, and customizable templates.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 text-center p-3">
+              <div class="card-body">
+                <i class="fas fa-shield-alt benefit-icon"></i>
+                <h5 class="card-title" data-lang="benefit4-title">HIPAA Compliant</h5>
+                <p class="card-text" data-lang="benefit4-text">
+                  Your patient data is secure with enterprise-grade encryption and compliance with healthcare privacy regulations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 text-center p-3">
+              <div class="card-body">
+                <i class="fas fa-brain benefit-icon"></i>
+                <h5 class="card-title" data-lang="benefit5-title">Advanced AI Technology</h5>
+                <p class="card-text" data-lang="benefit5-text">
+                  Powered by the latest LLM technology that continuously improves with use, learning your documentation preferences.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 text-center p-3">
+              <div class="card-body">
+                <i class="fas fa-laptop-medical benefit-icon"></i>
+                <h5 class="card-title" data-lang="benefit6-title">Works Everywhere</h5>
+                <p class="card-text" data-lang="benefit6-text">
+                  Available on web, iOS, and Android. Access your documentation tools from any device, anytime.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center mb-3" data-lang="how-works-title">How SmartDoc Works</h2>
+        <div class="section-divider"></div>
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4">
+            <img src="assets/images/demo-screenshot.jpg" alt="SmartDoc in action" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex mb-4">
+              <div class="me-3">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">1</div>
+              </div>
+              <div>
+                <h5 data-lang="step1-title">Chat or Speak with SmartDoc</h5>
+                <p data-lang="step1-text">Simply describe patient symptoms through text chat or voice recognition</p>
+              </div>
+            </div>
+            <div class="d-flex mb-4">
+              <div class="me-3">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">2</div>
+              </div>
+              <div>
+                <h5 data-lang="step2-title">AI Processes the Information</h5>
+                <p data-lang="step2-text">Our advanced AI analyzes symptoms and creates structured medical notes</p>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="me-3">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">3</div>
+              </div>
+              <div>
+                <h5 data-lang="step3-title">Get Complete Documentation</h5>
+                <p data-lang="step3-text">Ready-to-print Word documents in seconds, not minutes or hours</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-3" data-lang="testimonials-title">What Doctors Say</h2>
+        <div class="section-divider"></div>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="testimonial">
+              <div class="mb-3">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </div>
+              <p class="mb-3" data-lang="testimonial1-text">"SmartDoc cut my documentation time in half. I now spend more time with patients and less with paperwork."</p>
+              <div class="d-flex align-items-center">
+                <strong data-lang="testimonial1-name">Dr. Sarah Johnson</strong>
+                <span class="ms-2 text-muted" data-lang="testimonial1-specialty">Family Medicine</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="testimonial">
+              <div class="mb-3">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </div>
+              <p class="mb-3" data-lang="testimonial2-text">"Voice recognition is incredibly accurate and the reports are comprehensive. A game-changer for my practice."</p>
+              <div class="d-flex align-items-center">
+                <strong data-lang="testimonial2-name">Dr. Michael Chen</strong>
+                <span class="ms-2 text-muted" data-lang="testimonial2-specialty">Internal Medicine</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="testimonial">
+              <div class="mb-3">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </div>
+              <p class="mb-3" data-lang="testimonial3-text">"I was skeptical about AI, but SmartDoc truly understands medical terminology and creates perfect clinical notes."</p>
+              <div class="d-flex align-items-center">
+                <strong data-lang="testimonial3-name">Dr. Amelia Rodriguez</strong>
+                <span class="ms-2 text-muted" data-lang="testimonial3-specialty">Pediatrics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center mb-3" data-lang="faq-title">Frequently Asked Questions</h2>
+        <div class="section-divider"></div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" data-lang="faq1-question">
+                    How accurate is SmartDoc's AI?
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" data-lang="faq1-answer">
+                    SmartDoc's AI is trained on millions of medical documents and has a 95%+ accuracy rate in generating appropriate medical documentation. The system improves with use, adapting to your specialty and documentation style.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" data-lang="faq2-question">
+                    Is my patient data secure?
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" data-lang="faq2-answer">
+                    Absolutely. SmartDoc is fully HIPAA compliant with end-to-end encryption. We never store actual patient data, and all processing happens in secure, certified environments.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" data-lang="faq3-question">
+                    Can SmartDoc integrate with my existing EHR system?
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" data-lang="faq3-answer">
+                    Yes, SmartDoc offers integration with major EHR systems through our API. For custom integrations, our team provides support to ensure seamless workflow with your existing systems.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced CTA Section -->
+    <section class="py-5 bg-primary text-white">
+      <div class="container text-center">
+        <h2 class="mb-3" data-lang="cta-heading">Ready to Transform Your Documentation Process?</h2>
+        <p class="lead mb-4" data-lang="cta-subheading">Join thousands of physicians who save hours every week with SmartDoc</p>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card bg-white p-4">
+              <div class="card-body">
+                <h5 class="text-dark mb-3" data-lang="free-trial">Try SmartDoc Free for 14 Days</h5>
+                <p class="text-muted mb-3" data-lang="no-credit-card">No credit card required. Full access to all features.</p>
+                <a href="https://webapp.smartdoc.com/register" class="btn btn-primary btn-lg w-100 mb-3" data-lang="cta-button">Start Free Trial</a>
+                <small class="text-muted" data-lang="cancel-anytime">Cancel anytime. No obligations.</small>
               </div>
             </div>
           </div>
@@ -149,7 +436,9 @@
     <!-- Download Section -->
     <section class="bg-light py-5">
       <div class="container text-center">
-        <h2 class="mb-4" data-lang="download-title">Download SmartDoc</h2>
+        <h2 class="mb-3" data-lang="download-title">Download SmartDoc</h2>
+        <div class="section-divider"></div>
+        <p class="mb-4" data-lang="download-subtitle">Access SmartDoc on any device, anywhere</p>
         <div class="row justify-content-center">
           <div class="col-6 col-md-3">
             <a
@@ -172,66 +461,157 @@
     </section>
 
     <footer class="bg-dark text-white py-4">
-      <div class="container text-center">
-        <p>&copy; 2025 SmartDoc. All rights reserved.</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3 mb-md-0">
+            <h5>SmartDoc</h5>
+            <p class="small">AI-powered medical documentation that saves time and improves accuracy for healthcare professionals.</p>
+          </div>
+          <div class="col-md-4 mb-3 mb-md-0">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#benefits" class="text-white">Benefits</a></li>
+              <li><a href="#how-it-works" class="text-white">How It Works</a></li>
+              <li><a href="#testimonials" class="text-white">Testimonials</a></li>
+              <li><a href="https://webapp.smartdoc.com/register" class="text-white">Register</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact</h5>
+            <ul class="list-unstyled">
+              <li><a href="mailto:support@smartdoc.com" class="text-white">support@smartdoc.com</a></li>
+              <li><a href="tel:+1234567890" class="text-white">+1 (234) 567-890</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-3 bg-light">
+        <div class="text-center">
+          <p class="mb-0">&copy; 2025 SmartDoc. All rights reserved.</p>
+        </div>
       </div>
     </footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+    
     <script>
-      // Add this code inside the existing <script> tag, before the translations object
       function getBrowserLanguage() {
         const language = navigator.language || navigator.userLanguage;
-        return language.startsWith("es") ? "es" : "en";
+        return language.toLowerCase().startsWith("es") ? "es" : "en";
       }
-
-      // Language toggle functionality
+    
       const translations = {
         en: {
           "menu-benefits": "Benefits",
           "menu-webapp": "Web App",
-          "hero-title": "Simplify Your Medical Reports",
-          "hero-subtitle":
-            "Save time and increase accuracy with AI-powered medical documentation",
-          "cta-button": "Get Started",
+          "menu-how-it-works": "How It Works",
+          "menu-testimonials": "Testimonials",
+          "hero-title": "From Patient Conversation to Complete Documentation in Seconds",
+          "hero-subtitle": "Save time and increase accuracy with AI-powered medical documentation",
+          "cta-button": "Start Free Trial",
+          "no-credit-card": "No credit card required. 14-day free trial.",
           "benefits-title": "Why Choose SmartDoc?",
-          "benefit1-title": "Time Savings",
-          "benefit1-text": "Reduce documentation time by up to 60%",
-          "benefit2-title": "Improved Accuracy",
-          "benefit2-text":
-            "AI-powered assistance for precise medical reporting",
-          "benefit3-title": "Easy Integration",
-          "benefit3-text": "Seamlessly works with your existing workflow",
+          "benefit1-title": "Save 60% Documentation Time",
+          "benefit1-text": "Complete medical reports in a fraction of the time. SmartDoc handles the paperwork so you can focus on patient care.",
+          "benefit2-title": "Voice-Activated Assistant",
+          "benefit2-text": "Simply speak naturally about the patient's condition. Our AI understands medical terminology and contextual conversation.",
+          "benefit3-title": "Ready-to-Use Reports",
+          "benefit3-text": "Get complete Word documents with proper formatting, correct medical terminology, and customizable templates.",
+          "benefit4-title": "HIPAA Compliant",
+          "benefit4-text": "Your patient data is secure with enterprise-grade encryption and compliance with healthcare privacy regulations.",
+          "benefit5-title": "Advanced AI Technology",
+          "benefit5-text": "Powered by the latest LLM technology that continuously improves with use, learning your documentation preferences.",
+          "benefit6-title": "Works Everywhere",
+          "benefit6-text": "Available on web, iOS, and Android. Access your documentation tools from any device, anytime.",
           "download-title": "Download SmartDoc",
+          "download-subtitle": "Access SmartDoc on any device, anywhere",
+          "how-works-title": "How SmartDoc Works",
+          "step1-title": "Chat or Speak with SmartDoc",
+          "step1-text": "Simply describe patient symptoms through text chat or voice recognition",
+          "step2-title": "AI Processes the Information",
+          "step2-text": "Our advanced AI analyzes symptoms and creates structured medical notes",
+          "step3-title": "Get Complete Documentation",
+          "step3-text": "Ready-to-print Word documents in seconds, not minutes or hours",
+          "testimonials-title": "What Doctors Say",
+          "testimonial1-text": "SmartDoc cut my documentation time in half. I now spend more time with patients and less with paperwork.",
+          "testimonial1-name": "Dr. Sarah Johnson",
+          "testimonial1-specialty": "Family Medicine",
+          "testimonial2-text": "Voice recognition is incredibly accurate and the reports are comprehensive. A game-changer for my practice.",
+          "testimonial2-name": "Dr. Michael Chen",
+          "testimonial2-specialty": "Internal Medicine",
+          "testimonial3-text": "I was skeptical about AI, but SmartDoc truly understands medical terminology and creates perfect clinical notes.",
+          "testimonial3-name": "Dr. Amelia Rodriguez",
+          "testimonial3-specialty": "Pediatrics",
+          "faq-title": "Frequently Asked Questions",
+          "faq1-question": "How accurate is SmartDoc's AI?",
+          "faq1-answer": "SmartDoc's AI is trained on millions of medical documents and has a 95%+ accuracy rate in generating appropriate medical documentation. The system improves with use, adapting to your specialty and documentation style.",
+          "faq2-question": "Is my patient data secure?",
+          "faq2-answer": "Absolutely. SmartDoc is fully HIPAA compliant with end-to-end encryption. We never store actual patient data, and all processing happens in secure, certified environments.",
+          "faq3-question": "Can SmartDoc integrate with my existing EHR system?",
+          "faq3-answer": "Yes, SmartDoc offers integration with major EHR systems through our API. For custom integrations, our team provides support to ensure seamless workflow with your existing systems.",
+          "cta-heading": "Ready to Transform Your Documentation Process?",
+          "cta-subheading": "Join thousands of physicians who save hours every week with SmartDoc",
+          "free-trial": "Try SmartDoc Free for 14 Days",
+          "cancel-anytime": "Cancel anytime. No obligations."
         },
         es: {
           "menu-benefits": "Beneficios",
           "menu-webapp": "Aplicación Web",
-          "hero-title": "Simplifica tus Informes Médicos",
-          "hero-subtitle":
-            "Ahorra tiempo y mejora la precisión con documentación médica potenciada por IA",
-          "cta-button": "Comenzar",
+          "menu-how-it-works": "Cómo Funciona",
+          "menu-testimonials": "Testimonios",
+          "hero-title": "De la Conversación con el Paciente a la Documentación Completa en Segundos",
+          "hero-subtitle": "Ahorra tiempo y mejora la precisión con documentación médica potenciada por IA",
+          "cta-button": "Comenzar Prueba Gratuita",
+          "no-credit-card": "No se requiere tarjeta de crédito. Prueba gratuita de 14 días.",
           "benefits-title": "¿Por qué elegir SmartDoc?",
-          "benefit1-title": "Ahorro de Tiempo",
-          "benefit1-text": "Reduce el tiempo de documentación hasta un 60%",
-          "benefit2-title": "Mayor Precisión",
-          "benefit2-text": "Asistencia con IA para informes médicos precisos",
-          "benefit3-title": "Fácil Integración",
-          "benefit3-text": "Se integra perfectamente con tu flujo de trabajo",
+          "benefit1-title": "Ahorra 60% del Tiempo de Documentación",
+          "benefit1-text": "Completa informes médicos en una fracción del tiempo. SmartDoc se encarga del papeleo para que puedas centrarte en la atención al paciente.",
+          "benefit2-title": "Asistente Activado por Voz",
+          "benefit2-text": "Simplemente habla de forma natural sobre la condición del paciente. Nuestra IA entiende terminología médica y conversación contextual.",
+          "benefit3-title": "Informes Listos para Usar",
+          "benefit3-text": "Obtén documentos Word completos con formato adecuado, terminología médica correcta y plantillas personalizables.",
+          "benefit4-title": "Compatible con HIPAA",
+          "benefit4-text": "Tus datos de pacientes están seguros con cifrado de nivel empresarial y cumplimiento de las regulaciones de privacidad sanitaria.",
+          "benefit5-title": "Tecnología Avanzada de IA",
+          "benefit5-text": "Impulsado por la última tecnología LLM que mejora continuamente con el uso, aprendiendo tus preferencias de documentación.",
+          "benefit6-title": "Funciona en Todas Partes",
+          "benefit6-text": "Disponible en web, iOS y Android. Accede a tus herramientas de documentación desde cualquier dispositivo, en cualquier momento.",
           "download-title": "Descarga SmartDoc",
-        },
+          "download-subtitle": "Accede a SmartDoc en cualquier dispositivo, en cualquier lugar",
+          "how-works-title": "Cómo Funciona SmartDoc",
+          "step1-title": "Chatea o Habla con SmartDoc",
+          "step1-text": "Simplemente describe los síntomas del paciente mediante chat de texto o reconocimiento de voz",
+          "step2-title": "La IA Procesa la Información",
+          "step2-text": "Nuestra IA avanzada analiza los síntomas y crea notas médicas estructuradas",
+          "step3-title": "Obtén Documentación Completa",
+          "step3-text": "Documentos Word listos para imprimir en segundos, no en minutos u horas",
+          "testimonials-title": "Lo Que Dicen los Médicos",
+          "testimonial1-text": "SmartDoc redujo mi tiempo de documentación a la mitad. Ahora paso más tiempo con los pacientes y menos con el papeleo.",
+          "testimonial1-name": "Dra. Sarah Johnson",
+          "testimonial1-specialty": "Medicina Familiar",
+          "testimonial2-text": "El reconocimiento de voz es increíblemente preciso y los informes son completos. Un cambio radical para mi práctica.",
+          "testimonial2-name": "Dr. Michael Chen",
+          "testimonial2-specialty": "Medicina Interna",
+          "testimonial3-text": "Estaba escéptico sobre la IA, pero SmartDoc realmente entiende la terminología médica y crea notas clínicas perfectas.",
+          "testimonial3-name": "Dra. Amelia Rodriguez",
+          "testimonial3-specialty": "Pediatría",
+          "faq-title": "Preguntas Frecuentes",
+          "faq1-question": "¿Qué tan precisa es la IA de SmartDoc?",
+          "faq1-answer": "La IA de SmartDoc está entrenada con millones de documentos médicos y tiene una tasa de precisión superior al 95% en la generación de documentación médica apropiada. El sistema mejora con el uso, adaptándose a tu especialidad y estilo de documentación.",
+          "faq2-question": "¿Están seguros los datos de mis pacientes?",
+          "faq2-answer": "Absolutamente. SmartDoc cumple totalmente con HIPAA con cifrado de extremo a extremo. Nunca almacenamos datos reales de pacientes, y todo el procesamiento ocurre en entornos seguros y certificados.",
+          "faq3-question": "¿Puede SmartDoc integrarse con mi sistema EHR existente?",
+          "faq3-answer": "Sí, SmartDoc ofrece integración con los principales sistemas EHR a través de nuestra API. Para integraciones personalizadas, nuestro equipo proporciona soporte para garantizar un flujo de trabajo sin problemas con tus sistemas existentes.",
+          "cta-heading": "¿Listo para Transformar tu Proceso de Documentación?",
+          "cta-subheading": "Únete a miles de médicos que ahorran horas cada semana con SmartDoc",
+          "free-trial": "Prueba SmartDoc Gratis Durante 14 Días",
+          "cancel-anytime": "Cancela cuando quieras. Sin obligaciones."
+        }
       };
-
-      let currentLang = getBrowserLanguage();
-
-      function toggleLanguage() {
-        currentLang = currentLang === "en" ? "es" : "en";
-        updateContent();
-      }
-
-      // Replace the existing updateContent function
+    
+      let currentLang;
+    
       function updateContent() {
         document.documentElement.lang = currentLang;
         document.querySelectorAll("[data-lang]").forEach((element) => {
@@ -240,16 +620,34 @@
             if (element.tagName === "INPUT") {
               element.value = translations[currentLang][key];
             } else {
-              element.textContent = translations[currentLang][key];
+              element.innerHTML = translations[currentLang][key];
             }
           }
         });
       }
-
-      document.addEventListener("DOMContentLoaded", function () {
+    
+      document.addEventListener("DOMContentLoaded", function() {
+        currentLang = localStorage.getItem('preferredLang') || getBrowserLanguage();
         updateContent();
-        document.documentElement.lang = currentLang;
+    
+        const langToggle = document.getElementById('lang-toggle');
+        if (langToggle) {
+          langToggle.addEventListener('click', function() {
+            currentLang = currentLang === 'en' ? 'es' : 'en';
+            localStorage.setItem('preferredLang', currentLang);
+            updateContent();
+          });
+        }
+    
+        window.addEventListener('scroll', function() {
+          const navbar = document.querySelector('.navbar');
+          if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
       });
-    </script>
+    </script>    
   </body>
 </html>
